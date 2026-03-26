@@ -111,6 +111,13 @@
   </div>
 </nav>
 
+<!-- Disclaimer -->
+<div class="alert alert-warning text-center m-0" role="alert">
+  <i class="bi bi-info-circle-fill me-1"></i>
+  <strong>Disclaimer:</strong> Data yang ditampilkan merupakan <strong>data simulasi (dummy)</strong> untuk keperluan portofolio.
+  Seluruh angka dan informasi yang tertera bukan merupakan representasi data riil perusahaan.
+</div>
+
 <!-- Hero Section -->
  <section class="hero text-center bg-light py-5">
   <div class="container">
@@ -118,8 +125,7 @@
       <div class="col-lg-8">
         <h1 class="fw-bold mb-3">Generate QR Vision</h1>
         <p class="text-muted mb-0">
-          Generator QR Invoice melalui enkripsi AES dan konversi Base64 untuk <strong>PT. TMMIN (QR Vision)</strong>, 
-          serta pembuatan dan penyematan QR Code otomatis pada PDF Kwitansi <strong>PT. ADM (QR Delvi)</strong>.
+          Generator QR Invoice melalui enkripsi AES dan konversi Base64, serta pembuatan dan penyematan QR Code otomatis pada PDF Kwitansi.
         </p>
       </div>
     </div>
@@ -128,7 +134,7 @@
 
 <!-- Screenshot Section -->
 <section class="container py-5 text-center">
-  <h2 class="mb-4">Tampilan Website</h2>
+  <!-- <h2 class="mb-4">Tampilan Website</h2> -->
 
   <div class="screenshot-wrapper position-relative d-inline-block w-75 mx-auto rounded overflow-hidden" 
        data-bs-toggle="modal" 
@@ -208,6 +214,14 @@
   <div class="row">
     <div class="col-md-6">
       <h3>Tentang Project</h3>
+      <p>
+        Untuk mendukung ekosistem paperless di PT. TMMIN dan PT. ADM, sistem ini membantu supplier dalam membuat QR Code untuk dokumen invoice. 
+        QR Code dibuat menggunakan proses keamanan (enkripsi AES) dan konversi Base64. 
+        Setelah QR Code dibuat, dokumen invoice siap diunggah ke portal <strong>QR Vision</strong>. 
+
+        Selain itu, sistem juga menyediakan fitur otomatis untuk membuat dan menyematkan QR Code langsung ke dalam dokumen PDF kwitansi, 
+        sehingga dokumen tersebut siap diunggah ke portal <strong>QR Delvi</strong>. 
+      </p>
       <p>
         Sistem ini dibangun menggunakan framework <strong>Django (Python)</strong> dan <strong>Django ORM (Object-Relational Mapper)</strong>, 
         dengan penyimpanan data pada <strong>PostgreSQL</strong> serta tampilan antarmuka yang dibangun menggunakan <strong>Bootstrap 5</strong>.
