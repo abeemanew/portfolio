@@ -134,23 +134,48 @@
 
 <!-- Screenshot Section -->
 <section class="container py-5 text-center">
-  <!-- <h2 class="mb-4">Tampilan Website</h2> -->
-
-  <div class="screenshot-wrapper position-relative d-inline-block w-75 mx-auto rounded overflow-hidden" 
-       data-bs-toggle="modal" 
-       data-bs-target="#imageModal" 
-       onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
-       style="cursor: pointer;">
+  <div id="projectCarousel" class="carousel slide carousel-fade w-75 mx-auto shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
     
-    <img 
-      src="../assets/img/software/qrvision/qrvision2.png" 
-      class="img-fluid w-100 screenshot" 
-      alt="Screenshot Website"
-    >
-    <div class="screenshot-overlay d-flex align-items-center justify-content-center gap-2">
-      <i class="bi bi-zoom-in text-white fs-2"></i> 
-      <span class="text-white fs-4 fw-bold uppercase">Zoom</span>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
     </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <div class="screenshot-wrapper position-relative d-inline-block w-100" 
+             data-bs-toggle="modal" data-bs-target="#imageModal" 
+             onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
+             style="cursor: pointer;">
+          <img src="../assets/img/software/qrvision/qrvision1.png" class="d-block w-100 screenshot" alt="Dashboard QR Vision">
+          <div class="screenshot-overlay d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-zoom-in text-white fs-3"></i> <span class="text-white fw-bold">ZOOM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="screenshot-wrapper position-relative d-inline-block w-100" 
+             data-bs-toggle="modal" data-bs-target="#imageModal" 
+             onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
+             style="cursor: pointer;">
+          <img src="../assets/img/software/qrvision/qrvision2.png" class="d-block w-100 screenshot" alt="QR Generator AES">
+          <div class="screenshot-overlay d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-zoom-in text-white fs-3"></i> <span class="text-white fw-bold">ZOOM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </section>
 
