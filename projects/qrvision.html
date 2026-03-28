@@ -3,28 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio Project</title>
+  <title>Abimanyu | Portfolio Project QRVision</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
   <style>
     body {
       background-color: #f8f9fa;
     }
+    
     .hero {
       padding: 80px 0;
     }
+
     .screenshot {
       border-radius: 5px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
+
     .screenshot-wrapper {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .screenshot-wrapper:hover {
         transform: scale(1.01);
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
+
     .screenshot-overlay {
       position: absolute;
       top: 0;
@@ -36,15 +54,18 @@
       transition: opacity 0.3s ease;
       z-index: 1;
     }
+
     .screenshot-wrapper:hover .screenshot-overlay {
       opacity: 1;
     }
+
     /* Animasi untuk konten di dalam overlay (ikon & teks) */
     .screenshot-overlay .bi,
     .screenshot-overlay span {
       transform: translateY(15px);
       transition: transform 0.3s ease;
     }
+
     .screenshot-wrapper:hover .screenshot-overlay .bi,
     .screenshot-wrapper:hover .screenshot-overlay span {
       transform: translateY(0);
@@ -78,23 +99,50 @@
         object-fit: contain; 
     }
 
+    .carousel {
+      margin-bottom: 80px;       /* Ini yang memberi 'napas' agar section tidak sempit */
+      overflow: visible !important;
+    }
+
      /* Indicators */
     .carousel-indicators [data-bs-target] {
       width: 10px; height: 10px;
       border-radius: 50%;
       background-color: #6c757d;
+      text-indent: 0;
     }
+
+    .carousel-indicators [data-bs-target]::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 40px;          /* Jarak dari titik ke teks */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 16px;
+      color: #333;        /* Warna lebih gelap agar kontras */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none; /* Agar teks tidak mengganggu klik mouse */
+    }
+
+    .carousel-indicators .active::after,
+    .carousel-indicators [data-bs-target]:hover::after {
+      opacity: 1;
+      color: #343a40;
+      font-weight: bold;
+    }
+
     .carousel-indicators .active {
       background-color: #343a40;
     }
 
     /* Controls icon */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      filter: invert(1); /* putih */
+    .carousel-control-prev-icon.white-bg,
+    .carousel-control-next-icon.white-bg {
+      filter: invert(1); 
     }
 
-    /* Pastikan tombol navigasi ada di area kosong (bukan di atas gambar) */
     .carousel-control-prev { left: 0; width: 7.5%; }
     .carousel-control-next { right: 0; width: 7.5%; }
 
@@ -116,12 +164,35 @@
       max-width: 75%; 
       margin: 0 auto;
     }
-    .carousel-inner {
+
+    .carousel-inner.white-bg {
       border-radius: 0.5rem;
       /* background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* contoh gradien pink-oren */
       background: #f8f9fa;
       padding: 5rem; /* beri ruang di sekitar gambar agar gradien terlihat */
     }
+
+    @keyframes fadeInUp {
+      0% { 
+        opacity: 0; 
+        transform: translateY(15px); 
+      }
+      /* Jeda 1 detik pertama (50% dari 2s) tetap transparan */
+      50% { 
+        opacity: 0; 
+        transform: translateY(15px); 
+      }
+      100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    .delayed-text {
+      opacity: 0; /* Mulai dari transparan */
+      animation: fadeInUp 2s ease-out forwards;
+    }
+
   </style>
 </head>
 <body>
@@ -149,34 +220,49 @@
         <p class="text-muted mb-0">
           Generator QR Invoice melalui enkripsi AES dan konversi Base64, serta pembuatan dan penyematan QR Code otomatis pada PDF Kwitansi.
         </p>
+        <div class="d-inline-flex align-items-center mt-4 pt-3">
+          <div class="pe-3 border-end">
+            <small class="text-muted d-block text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Mulai Pengembangan</small>
+            <span class="fw-bold text-dark" style="font-size: 14px;">Mei 2023</span>
+          </div>
+          <div class="ps-3 text-center">
+            <small class="text-muted d-block text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Versi Terakhir</small>
+            <span class="fw-bold text-dark" style="font-size: 14px;">v3.0.2</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Screenshot Section -->
-<section class="container py-5 text-center">
+<section class="container text-center">
   <div id="projectCarousel" class="carousel slide carousel-fade w-75 mx-auto overflow-hidden" data-bs-ride="carousel">
     
     <!-- Indicators -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" data-label="Form Create Private Key"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" data-label="Form Manual Input Invoice (PT. TMMIN)"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" data-label="Form Manual Input Kwitansi (PT. ADM)"></button>
     </div>
 
     <!-- Carousel items -->
-    <div class="carousel-inner rounded">
+    <div class="carousel-inner rounded white-bg">
       <div class="carousel-item active" data-bs-interval="5000">
         <div class="screenshot-wrapper position-relative" 
              data-bs-toggle="modal" data-bs-target="#imageModal" 
              onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
              style="cursor: pointer;">
-          <img src="../assets/img/software/qrvision/qrvision1.png" class="d-block w-100" alt="Dashboard QR Vision">
+          <img src="../assets/img/software/qrvision/qrvision1.png" class="d-block w-100 rounded shadow" alt="Screenshot 1">
           <div class="screenshot-overlay d-flex align-items-center justify-content-center">
             <i class="bi bi-zoom-in text-white fs-3"></i>
+            <span class="text-white fs-3 uppercase ms-2">Zoom</span>
           </div>
         </div>
+        <!-- <div class="text-center mt-3 py-2 delayed-text">
+          <h5 class="fw-bold">Form Create Private Key</h5>
+          <p class="text-muted">Form untuk memasukkan Private Key resmi yang diterbitkan oleh PT TMMIN.</p>
+        </div> -->
       </div>
 
       <div class="carousel-item" data-bs-interval="5000">
@@ -184,21 +270,43 @@
              data-bs-toggle="modal" data-bs-target="#imageModal" 
              onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
              style="cursor: pointer;">
-          <img src="../assets/img/software/qrvision/qrvision2.png" class="d-block w-100" alt="QR Generator AES">
+          <img src="../assets/img/software/qrvision/qrvision2.png" class="d-block w-100 rounded shadow" alt="Screenshot 2">
           <div class="screenshot-overlay d-flex align-items-center justify-content-center">
             <i class="bi bi-zoom-in text-white fs-3"></i>
+            <span class="text-white fs-3 uppercase ms-2">Zoom</span>
           </div>
         </div>
+        <!-- <div class="text-center mt-3 py-2 delayed-text">
+          <h5 class="fw-bold">Form Manual Input Invoice (PT. TMMIN)</h5>
+          <p class="text-muted">Form untuk memasukkan data invoice secara manual, yang selanjutnya akan dienkripsi menggunakan AES-128-CBC dan digenerate menjadi QR Code.</p>
+        </div> -->
+      </div>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="screenshot-wrapper position-relative" 
+             data-bs-toggle="modal" data-bs-target="#imageModal" 
+             onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
+             style="cursor: pointer;">
+          <img src="../assets/img/software/qrvision/qrvision3.png" class="d-block w-100 rounded shadow" alt="Screenshot 3">
+          <div class="screenshot-overlay d-flex align-items-center justify-content-center">
+            <i class="bi bi-zoom-in text-white fs-3"></i>
+            <span class="text-white fs-3 uppercase ms-2">Zoom</span>
+          </div>
+        </div>
+        <!-- <div class="text-center mt-3 py-2 delayed-text">
+          <h5 class="fw-bold">Form Manual Input Kwitansi (PT. ADM)</h5>
+          <p class="text-muted">Form untuk mengunggah PDF, mengisi data manual, serta menyematkan QR Code ke dalam dokumen.</p>
+        </div> -->
       </div>
     </div>
 
     <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+      <span class="carousel-control-prev-icon white-bg"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
+      <span class="carousel-control-next-icon white-bg"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
@@ -284,13 +392,13 @@
           <strong>Autentikasi LDAP:</strong> Login terpusat menggunakan akun internal tanpa perlu registrasi ulang.
         </li>
         <li class="mb-2">
-          <strong>Generate QR Vision (TMMIN):</strong> Keamanan tingkat tinggi dengan enkripsi AES dan konversi data ke format Base64 sebelum proses <em>generate</em> QR.
+          <strong>Generate QR Vision (TMMIN):</strong> Keamanan tingkat tinggi dengan enkripsi AES dan konversi data ke format Base64 sebelum proses generate QR.
         </li>
         <li class="mb-2">
-          <strong>Generate QR Delvi (ADM):</strong> Pembuatan otomatis dan penyematan (<em>embedding</em>) QR Code langsung ke dalam dokumen PDF kwitansi.
+          <strong>Generate QR Delvi (ADM):</strong> Pembuatan otomatis dan penyematan (embedding) QR Code langsung ke dalam dokumen PDF kwitansi.
         </li>
         <li class="mb-2">
-          <strong>Sesi Keamanan:</strong> Fitur <em>auto-logout</em> otomatis untuk perlindungan akses akun secara menyeluruh.
+          <strong>Sesi Keamanan:</strong> Fitur auto-logout otomatis untuk perlindungan akses akun secara menyeluruh.
         </li>
         <!-- <li>
           <strong>Form Registrasi:</strong> Form pendaftaran akun lokal sebagai alternatif jika layanan LDAP tidak tersedia.
@@ -334,6 +442,7 @@
   <p class="mb-0">Dibuat oleh Abimanyu · Diperbarui terakhir: April 2026.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
 </body>
 </html>
