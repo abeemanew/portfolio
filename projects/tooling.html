@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abimanyu | Generate QR Vision & QR Delvi</title>
+  <title>Abimanyu | Tooling Warehouse Inventory Management System </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -220,9 +220,9 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <h2 class="fw-bold mb-3">Generate QR Vision</h2>
+        <h2 class="fw-bold mb-3">Tooling Warehouse Inventory Management System</h2>
         <p class="text-muted mb-0">
-          Generator QR Invoice melalui enkripsi AES dan konversi Base64, serta pembuatan dan penyematan QR Code otomatis pada PDF Kwitansi.
+          Sistem manajemen inventory tooling untuk departemen maintenance yang mendukung pengelolaan spare part dan tools.
         </p>
         <div class="d-inline-flex align-items-center mt-3 pt-3">
           <div class="pe-3 border-end">
@@ -231,7 +231,7 @@
           </div>
           <div class="ps-3 text-center">
             <small class="text-muted d-block text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Versi Terakhir</small>
-            <span class="fw-bold text-dark" style="font-size: 14px;">v3.0.2</span>
+            <span class="fw-bold text-dark" style="font-size: 14px;">v3.0.1</span>
           </div>
         </div>
       </div>
@@ -245,9 +245,9 @@
     
     <!-- Indicators -->
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" data-label="Form Create Private Key"></button>
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" data-label="Form Manual Input Invoice (PT. TMMIN)"></button>
-      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" data-label="Form Manual Input Kwitansi (PT. ADM)"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" data-label="Part Data Input (Manual & Bulk Import)"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" data-label="Vendor Data Input (Manual & Bulk Import)"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" data-label="Bin Location Data Input (Manual & Bulk Import)"></button>
     </div>
 
     <!-- Carousel items -->
@@ -274,7 +274,7 @@
              data-bs-toggle="modal" data-bs-target="#imageModal" 
              onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
              style="cursor: pointer;">
-          <img src="../assets/img/software/qrvision/qrvision2.png" class="d-block w-100 rounded shadow" alt="Screenshot 2">
+          <img src="../assets/img/software/tooling/tooling2.png" class="d-block w-100 rounded shadow" alt="Screenshot 2">
           <div class="screenshot-overlay d-flex align-items-center justify-content-center">
             <i class="bi bi-zoom-in text-white fs-3"></i>
             <span class="text-white fs-3 uppercase ms-2">Zoom</span>
@@ -291,7 +291,7 @@
              data-bs-toggle="modal" data-bs-target="#imageModal" 
              onclick="document.getElementById('modalImage').src=this.querySelector('img').src;"
              style="cursor: pointer;">
-          <img src="../assets/img/software/qrvision/qrvision3.png" class="d-block w-100 rounded shadow" alt="Screenshot 3">
+          <img src="../assets/img/software/tooling/tooling3.png" class="d-block w-100 rounded shadow" alt="Screenshot 3">
           <div class="screenshot-overlay d-flex align-items-center justify-content-center">
             <i class="bi bi-zoom-in text-white fs-3"></i>
             <span class="text-white fs-3 uppercase ms-2">Zoom</span>
@@ -325,25 +325,34 @@
         <div id="carouselScreenshot" class="carousel slide carousel-fade">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../assets/img/software/qrvision/qrvision1.png" class="d-block w-75 rounded" alt="Screenshot 1">
+              <img src="../assets/img/software/tooling/tooling1.png" class="d-block w-75 rounded" alt="Screenshot 1">
               <div class="carousel-caption d-none d-md-block custom-caption rounded-bottom">
-                <h5 class="fw-bold text-white">Form Create Private Key</h5>
-                <p class="text-white-50 small">Form untuk memasukkan Private Key resmi yang diterbitkan oleh PT TMMIN.</p>
+                <h5 class="fw-bold text-white">Part Data Input (Manual & Bulk Import)</h5>
+                <p class="text-white-50 small">
+                Fitur ini mendukung input data part secara manual serta import massal melalui file Excel,
+                memungkinkan proses onboarding data inventory menjadi lebih cepat, terstruktur, dan scalable.
+                </p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../assets/img/software/qrvision/qrvision2.png" class="d-block w-75 rounded" alt="Screenshot 2">
+              <img src="../assets/img/software/tooling/tooling2.png" class="d-block w-75 rounded" alt="Screenshot 2">
               <div class="carousel-caption d-none d-md-block custom-caption rounded-bottom">
-                <h5 class="fw-bold text-white">Form Manual Input Invoice (PT. TMMIN)</h5>
-                <p class="text-white-50 small">Form untuk memasukkan data invoice secara manual, yang selanjutnya akan dienkripsi menggunakan AES-128-CBC dan digenerate menjadi QR Code.</p>
+                <h5 class="fw-bold text-white">Vendor Data Input (Manual & Bulk Import)</h5>
+                <p class="text-white-50 small">
+                Fitur ini mendukung input data vendor secara manual dan import massal menggunakan Excel,
+                memungkinkan pengelolaan supplier menjadi lebih cepat, terstruktur, dan scalable.
+                </p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../assets/img/software/qrvision/qrvision3.png" class="d-block w-75 rounded" alt="Screenshot 3">
+              <img src="../assets/img/software/tooling/tooling3.png" class="d-block w-75 rounded" alt="Screenshot 3">
               <div class="carousel-caption d-none d-md-block custom-caption rounded-bottom">
-                <h5 class="fw-bold text-white">Form Manual Input Kwitansi (PT. ADM)</h5>
-                <p class="text-white-50 small">Form untuk mengunggah PDF, mengisi data manual, serta menyematkan QR Code ke dalam dokumen.</p>
-              </div>
+                  <h5 class="fw-bold text-white">Bin Location Data Input (Manual & Bulk Import)</h5>
+                  <p class="text-white-50 small">
+                  Menyediakan input data lokasi penyimpanan secara manual dan import massal berbasis Excel,
+                  memungkinkan pengaturan bin location berdasarkan area, storage, dan location type.
+                  </p>
+                </div>
             </div>
             <!-- <div class="carousel-item">
               <img src="../assets/img/software/qrvision/qrvision4.png" class="d-block w-75 rounded" alt="Screenshot 4">
@@ -377,12 +386,8 @@
     <div class="col-md-6">
       <h3>Tentang Project</h3>
       <p>
-        Untuk mendukung ekosistem paperless di PT. TMMIN dan PT. ADM, sistem ini membantu supplier dalam membuat QR Code untuk dokumen invoice. 
-        QR Code dibuat menggunakan proses keamanan (enkripsi AES) dan konversi Base64. 
-        Setelah QR Code dibuat, dokumen invoice siap diunggah ke portal <strong>QR Vision</strong>. 
-
-        Selain itu, sistem juga menyediakan fitur otomatis untuk membuat dan menyematkan QR Code langsung ke dalam dokumen PDF kwitansi, 
-        sehingga dokumen tersebut siap diunggah ke portal <strong>QR Delvi</strong>. 
+        Sistem yang dirancang untuk mengelola persediaan alat (tools), spare part, dan material pendukung yang berada di bawah tanggung jawab <strong>departemen maintenance</strong>.
+        Sistem ini membantu memastikan ketersediaan barang, mengontrol pergerakan stok, serta meningkatkan efisiensi dalam proses pengadaan dan penggunaan alat. 
       </p>
       <p>
         Sistem ini dibangun menggunakan framework <strong>Django (Python)</strong> dan <strong>Django ORM (Object-Relational Mapper)</strong>, 
